@@ -2,6 +2,13 @@ const express = require('express');
 const app = express();
 const PORT = 3000;
 
+const path = require('path');
+const engine = require('ejs-mate');
+
+app.engine('ejs', engine);
+app.set('views', `${__dirname}/views`);
+app.set('view engine', 'ejs');
+
 const adminRoute = require('./routes/admin.js');
 const userRoute = require('./routes/user.js');
 const eventRoute = require('./routes/event.js');
@@ -12,6 +19,7 @@ app.use('/user', userRoute);
 app.use('/event', eventRoute);
 app.use('/session', sessionRoute);
 
-app.get('/', (req, res) => res.send('Welcome to Home!'));
+app.get('/', (req, res) => res.render('index'));
 
 app.listen(PORT, () => console.log(`Serving on ${PORT}`));
+
