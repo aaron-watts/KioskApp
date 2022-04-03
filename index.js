@@ -9,6 +9,9 @@ app.engine('ejs', engine);
 app.set('views', `${__dirname}/views`);
 app.set('view engine', 'ejs');
 
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 const adminRoute = require('./routes/admin.js');
 const userRoute = require('./routes/user.js');
 const eventRoute = require('./routes/event.js');
