@@ -1,0 +1,43 @@
+:root {}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+form {
+    display: grid;
+    grid-template-columns: repeat(2, 1.25fr) 2fr;
+    grid-template-areas: 'left middle right';
+    grid-gap: .8em;
+
+    padding-block: 2rem;
+    width: 60vw;
+    max-width: 50vw;
+    margin-inline: auto;
+}
+
+form label,
+form input {
+    grid-column: left / right;
+    width: 100%;
+}
+
+form input.date:not(.yy) {
+    width: 90%;
+}
+form input.date.dd {
+    grid-column: left / span 1; 
+}
+form input.date.mm {
+    grid-column: middle / span 1;
+}
+form input.date.yy {
+    grid-column: right / span 1;
+}
+
