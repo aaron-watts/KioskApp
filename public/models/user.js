@@ -1,9 +1,18 @@
+import * as validate from '/utils/validate.js';
+
 export const userModel = {
     fname: {
+        validate: [
+            validate.isAaron
+        ]
     },
     lname: {
     },
     dob: {
+        validate: [
+            validate.isValidDate,
+            validate.isPast
+        ]
     },
     address: {
     },

@@ -6,15 +6,33 @@ export class Form {
         this.inputKeys = Object.keys(this.model);
 
         this.inputKeys.forEach(inputKey => {
-            //this.form[inputKey].dataset.data = this.model[inputKey].data;
+            // add helper functions for input events
         });
 
-        this.form.addEventListener('submit', function(evt){
+        this.form.addEventListener('submit', evt => {
             evt.preventDefault();
 
             console.log('Delay submission...');
-        })
+
+            console.log(this);
+
+            // validate
+            this.validate();
+        });
     }
 
+    validate(){
+        for (let inputKey of this.inputKeys){
+            if (this.model[inputKey].validate) {
+                for(let rule of this.model[inputKey].validate){
+                    //console.log(rule);
+
+                    console.log(rule(this.form[inputKey]));
+                }
+            }
+        }
+
+        return true;
+    }
 }
 
