@@ -6,55 +6,63 @@
 <% block('navRight').append('<button>Right</button>') %>
 
 <form id="user" action"/user" method="POST">
-    <label for="fname">First Name</label>
-    <input type="text" id="fname" name="user[fname]">
+    <section class="page active">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="user[fname]">
 
-    <label for="lname">Last Name</label>
-    <input type="text" id="lname" name="user[lname]">
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="user[lname]">
     
-    <label for="dob">DOB</label>
-    <input type="text" id="dob" name="user[dob]" class="date dd">
-    <input type="text" id="dob" name="user[dob]" class="date mm">
-    <input type="text" id="dob" name="user[dob]" class="date yy">
+        <label for="dob">DOB</label>
+        <input type="text" id="dob" name="user[dob]" class="date dd">
+        <input type="text" id="dob" name="user[dob]" class="date mm">
+        <input type="text" id="dob" name="user[dob]" class="date yy">
 
-    <label for="address">Door Number and Street Name</label>
-    <input type="text" id="address" name="user[address]">
+        <label for="address">Door Number and Street Name</label>
+        <input type="text" id="address" name="user[address]">
 
-    <label for="postcode">Post Code</label>
-    <input type="text" id="postcode" name="user[postcode]">
+        <label for="postcode">Post Code</label>
+        <input type="text" id="postcode" name="user[postcode]">
  
-    <label for="contact">Emergency Contact Name</label>
-    <input type="text" id="contact" name="user[contact]">
+        <label for="contact">Emergency Contact Name</label>
+        <input type="text" id="contact" name="user[contact]">
 
-    <label for="phone">Emergency Contact Phone Number</label>
-    <input type="text" id="phone" name="user[phone]">
+        <label for="phone">Emergency Contact Phone Number</label>
+        <input type="text" id="phone" name="user[phone]">
+    </section>
+    <section class="page">
+        <label for="ethnicity">Ethnicity</label>
+        <input type="text" id="ethnicity" name="user[ethnicity]">
 
-    <label for="ethnicity">Ethnicity</label>
-    <input type="text" id="ethnicity" name="user[ethnicity]">
+        <label for="gender">Gender</label>
+        <input type="text" id="gender" name="user[gender]">
 
-    <label for="gender">Gender</label>
-    <input type="text" id="gender" name="user[gender]">
+        <label for="language">Language</label>
+        <input type="text" id="language" name="user[language]">
 
-    <label for="language">Language</label>
-    <input type="text" id="language" name="user[language]">
+        <label for="religion">Religion</label>
+        <input type="text" id="religion" name="user[religion]">
 
-    <label for="religion">Religion</label>
-    <input type="text" id="religion" name="user[religion]">
+        <label for="school">School</label>
+        <input type="text" id="school" name="user[school]">
+    </section>
+    <section class="page">
+        <label for="medical">Medical Conditions</label>
+        <input type="text" id="medical" name="user[medical]">
 
-    <label for="school">School</label>
-    <input type="text" id="school" name="user[school]">
+        <label for="diet">Dietary Requirements</label>
+        <input type="text" id="diet" name="user[diet]">
+    </section>
+    <section class="page">
+        <label for="photo">Photo Consent</label>
+        <input type="checkbox" id="photo" name="user[photo]">
 
-    <label for="medical">Medical Conditions</label>
-    <input type="text" id="medical" name="user[medical]">
-
-    <label for="diet">Dietary Requirements</label>
-    <input type="text" id="diet" name="user[diet]">
-
-    <label for="photo">Photo Consent</label>
-    <input type="checkbox" id="photo" name="user[photo]">
-
-    <button type="submit">Done!</button>
+        <button type="submit">Done!</button>
+    </section>
 </form>
+
+<button id="back">Back</button>
+<button id="next">Next</button>
 
 <script type="module" src="/app/user.js"></script>
 

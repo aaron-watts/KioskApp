@@ -14,20 +14,18 @@ export class Form {
 
             console.log('Delay submission...');
 
-            console.log(this);
-
             // validate
-            this.validate();
+            if (this.validate()) console.log('SENDING FORM...');
         });
     }
 
-    validate(){
-        for (let inputKey of this.inputKeys){
+    validate() {
+        for (let inputKey of this.inputKeys) {
             if (this.model[inputKey].validate) {
-                for(let rule of this.model[inputKey].validate){
-                    //console.log(rule);
+                const input = this.form[inputKey];
 
-                    console.log(rule(this.form[inputKey]));
+                for(let rule of this.model[inputKey].validate) {
+                    if (!rule(input)) return false;
                 }
             }
         }
