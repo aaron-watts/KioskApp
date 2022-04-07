@@ -3,24 +3,41 @@ import * as validate from '/utils/validate.js';
 export const userModel = {
     fname: {
         validate: [
-            validate.isAaron
+            validate.isNotBlank
         ]
     },
     lname: {
+        validate: [
+            validate.isNotBlank
+        ]
     },
     dob: {
         validate: [
             validate.isValidDate,
-            validate.isPast
+            validate.isPastDate
         ]
     },
     address: {
+        validate: [
+            validate.isNotBlank
+        ]
     },
     postcode: {
+        validate: [
+            validate.isNotBlank,
+            validate.isValidPostCode
+        ]
     },
     contact: {
+        validate: [
+            validate.isNotBlank
+        ]
     },
     phone: {
+        validate: [
+            validate.isNotBlank,
+            validate.isValidPhoneNumber
+        ]
     },
     ethnicity: {
     },

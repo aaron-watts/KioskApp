@@ -11,8 +11,8 @@ body {
 }
 
 form {
-    position: relative;
     --transition-time: .26s;
+    position: relative;
 }
 
 form .page {
@@ -28,7 +28,6 @@ form .page {
     min-width: 60vw;
     margin-inline: auto;
 
-    /*transition: transform 0s .15s ease-in-out;*/
     transition: transform 0s var(--transition-time) ease-in-out;
 }
 form .page.active {
@@ -75,7 +74,6 @@ form input.date.yy {
     width: 70%;
 }
 
-button#next,
 button#back {
     margin-top: 85vh;
 }

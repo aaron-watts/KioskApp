@@ -17,15 +17,22 @@ export class Form {
             // validate
             if (this.validate()) console.log('SENDING FORM...');
         });
+
+        console.log(this);
     }
 
-    validate() {
-        for (let inputKey of this.inputKeys) {
+    validate(inputKeys=this.inputKeys) {
+        for (let inputKey of inputKeys) {
             if (this.model[inputKey].validate) {
                 const input = this.form[inputKey];
 
                 for(let rule of this.model[inputKey].validate) {
-                    if (!rule(input)) return false;
+                    console.log(`Testing if [${input.id || input[0].id}] [${rule.name}]`);
+                    if (!rule(input)) {
+                        console.log('Test Failed');
+                        return false;
+                    }
+                    console.log('Test successful');
                 }
             }
         }
