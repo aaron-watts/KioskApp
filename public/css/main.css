@@ -1,87 +1,22 @@
 :root {
-    --color-white: #eee;
-    --color-black: #212121;
-    --color-primary-dark: #00484b;
-    --color-red: #bc4343;
+    --color-white: 238, 238, 238;
+    --color-black: 33, 33, 33;
+    --color-primary-dark: 00, 72, 75;
+    --color-red: 188, 67, 67;
     --font-main: "Liberation Sans", sans-serif;
     --font-secondary: serif;
 }
 
 html {
+    font-family: var(--font-main);
     font-size: 16px;
+    letter-spacing: .2rem;
 }
 
 body {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-}
-
-form {
-    --transition-time: .26s;
-    position: relative;
-}
-
-form .page {
-    position: absolute;
-    top: 0;
-    
-    display: grid;
-    grid-template-columns: 1fr repeat(2, 1.25fr) 2fr 1fr;
-    grid-template-areas: '. left middle right .';
-    grid-gap: .8em;
-
-    width: 100vw;
-    min-width: 60vw;
-    margin-inline: auto;
-
-    transition: transform 0s var(--transition-time) ease-in-out;
-}
-form .page.active {
-    transform: translateX(0);
-}
-form .page:not(.active) {
-    transform: translateX(-100vw);
-}
-form .page.active ~ .page {
-    transform: translateX(100vw);
-}
-
-form .page:nth-of-type(1) {
-    z-index: 4;
-}
-
-form label,
-form input,
-form textarea {
-    grid-column: left / right;
-    width: 90%;
-}
-form .page label,
-form .page input,
-form .page textarea {
-    transform: scaleY(0);
-    transition: transform var(--transition-time) ease-out;
-}
-form .page.active label,
-form .page.active input,
-form .page.active textarea {
-    transform: scaleY(1);
-    transition: transform var(--transition-time) var(--transition-time) ease-out;
-}
-
-form input.date:not(.yy) {
-    width: 90%;
-}
-form input.date.dd {
-    grid-column: left / span 1; 
-}
-form input.date.mm {
-    grid-column: middle / span 1;
-}
-form input.date.yy {
-    grid-column: right / span 1;
-    width: 70%;
 }
 
 button#back {
