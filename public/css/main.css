@@ -1,4 +1,11 @@
-:root {}
+:root {
+    --color-white: #eee;
+    --color-black: #212121;
+    --color-primary-dark: #00484b;
+    --color-red: #bc4343;
+    --font-main: "Liberation Sans", sans-serif;
+    --font-secondary: serif;
+}
 
 html {
     font-size: 16px;
