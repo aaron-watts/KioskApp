@@ -13,8 +13,7 @@ nextBtn.addEventListener('click', () => {
     ).map(input => input.id);
 
     const isValid = userForm.validate(pageInputs);
-    console.log(isValid);
-    if (!isValid) return;
+    if (isValid === false) return;
 
     const index = Array.from(pages).findIndex(page => page.classList.contains('active'));
 
