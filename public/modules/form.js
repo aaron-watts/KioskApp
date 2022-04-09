@@ -17,8 +17,6 @@ export class Form {
             // validate
             if (this.validate()) console.log('SENDING FORM...');
         });
-
-        console.log(this);
     }
 
     validate(inputKeys=this.inputKeys) {

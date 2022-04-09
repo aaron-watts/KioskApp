@@ -45,17 +45,20 @@ form .page:nth-of-type(1) {
 }
 
 form label,
-form input {
+form input,
+form textarea {
     grid-column: left / right;
     width: 90%;
 }
 form .page label,
-form .page input {
+form .page input,
+form .page textarea {
     transform: scaleY(0);
     transition: transform var(--transition-time) ease-out;
 }
 form .page.active label,
-form .page.active input {
+form .page.active input,
+form .page.active textarea {
     transform: scaleY(1);
     transition: transform var(--transition-time) var(--transition-time) ease-out;
 }
