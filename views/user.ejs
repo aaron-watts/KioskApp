@@ -5,8 +5,8 @@
 <% block('navLeft').append('<button>Left</button>') %>
 <% block('navRight').append('<button>Right</button>') %>
 
-<div class="overlay full transparent">
-    <div class="spinner"></div>
+<div id="spinner-overlay" class="overlay full transparent">
+    <div class="spinner" data-overlay="spinner-overlay"></div>
 </div>
 
 <form id="user" action"/user" method="POST">

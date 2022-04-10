@@ -32,7 +32,7 @@ button#back {
 
     z-index: 5;
     transform: scale(0);
-    transition: .16s linear;
+    /*transition: .16s linear;*/
 }
 .overlay.active {
     transform: scale(1);
@@ -60,8 +60,10 @@ button#back {
 
     z-index: 6;
 
-    animation: rotate .9s .3s ease-in-out infinite;
     transform-origin: 0 0;
+}
+.overlay.active .spinner {
+    animation: rotate .6s ease-in-out infinite;
 }
 
 @keyframes rotate {

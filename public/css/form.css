@@ -15,8 +15,6 @@ form .page {
     width: 100vw;
     min-width: 60vw;
     margin-inline: auto;
-
-    transition: transform 2s var(--transition-time) ease-in-out;
 }
 form .page.active {
     transform: translateX(0);
