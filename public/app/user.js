@@ -37,13 +37,11 @@ nextBtn.addEventListener('click', () => {
             pages[index].classList.remove('active');
             pages[index + 1].classList.add('active');
         }
-
-        spinnerControl.classList.remove('active');
     })
     .catch(() => {
         console.log('rejected')
-        spinnerControl.classList.remove('active');
     })
+    .then(() => spinnerControl.classList.remove('active'))
 
 });
 
