@@ -10,13 +10,13 @@ form .page {
     display: grid;
     grid-template-columns: 1fr repeat(2, 1.25fr) 2fr 1fr;
     grid-template-areas: '. left middle right .';
-    grid-gap: .8em;
+    grid-gap: .5rem;
 
     width: 100vw;
     min-width: 60vw;
     margin-inline: auto;
 
-    transition: transform 0s var(--transition-time) ease-in-out;
+    transition: transform 2s var(--transition-time) ease-in-out;
 }
 form .page.active {
     transform: translateX(0);
@@ -34,7 +34,7 @@ form .page:nth-of-type(1) {
 
 form label {
     font-size: .8em;
-    margin-bottom: -.7em;
+    padding-top: .3rem;
 }
 form input,
 form textarea {
@@ -72,14 +72,14 @@ form textarea {
 form .page label,
 form .page input,
 form .page textarea {
-    transform: scaleY(0);
-    transition: transform var(--transition-time) ease-out;
+    /*transform: scaleY(0);
+    transition: transform var(--transition-time) ease-out;*/
 }
 form .page.active label,
 form .page.active input,
 form .page.active textarea {
-    transform: scaleY(1);
-    transition: transform var(--transition-time) var(--transition-time) ease-out;
+    /*transform: scaleY(1);
+    transition: transform var(--transition-time) var(--transition-time) ease-out;*/
 }
 
 form input.date:not(.yy) {
