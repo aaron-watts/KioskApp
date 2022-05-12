@@ -13,57 +13,68 @@
     <section class="page active">
         <label for="fname">First Name</label>
         <input type="text" id="fname" name="user[fname]">
+        <%- include('partials/hint') %>
 
         <label for="lname">Last Name</label>
         <input type="text" id="lname" name="user[lname]">
+        <%- include('partials/hint') %>
     
         <label for="dob">DOB</label>
         <input type="text" id="dob" name="user[dob]" class="date dd">
         <input type="text" id="dob" name="user[dob]" class="date mm">
         <input type="text" id="dob" name="user[dob]" class="date yy">
+        <%- include('partials/hint') %>
 
         <label for="address">Door Number and Street Name</label>
         <input type="text" id="address" name="user[address]">
+        <%- include('partials/hint') %>
 
         <label for="postcode">Post Code</label>
         <input type="text" id="postcode" name="user[postcode]">
- 
-        <label for="contact">Emergency Contact Name</label>
-        <input type="text" id="contact" name="user[contact]">
-
-        <label for="phone">Emergency Contact Phone Number</label>
-        <input type="text" id="phone" name="user[phone]" class="phone">
+        <%- include('partials/hint') %>
     </section>
     <section class="page">
         <label for="ethnicity">Ethnicity</label>
         <input type="text" id="ethnicity" name="user[ethnicity]">
+        <%- include('partials/hint') %>
 
         <label for="gender">Gender</label>
         <input type="text" id="gender" name="user[gender]">
+        <%- include('partials/hint') %>
 
         <label for="language">Language</label>
         <input type="text" id="language" name="user[language]">
+        <%- include('partials/hint') %>
 
         <label for="religion">Religion</label>
         <input type="text" id="religion" name="user[religion]">
+        <%- include('partials/hint') %>
 
         <label for="school">School</label>
         <input type="text" id="school" name="user[school]">
+        <%- include('partials/hint') %>
     </section>
     <section class="page">
+        <label for="contact">Emergency Contact Name</label>
+        <input type="text" id="contact" name="user[contact]">
+        <%- include('partials/hint') %>
+
+        <label for="phone">Emergency Contact Phone Number</label>
+        <input type="text" id="phone" name="user[phone]" class="phone">
+        <%- include('partials/hint') %>
+
         <label for="medical">Medical Conditions</label>
-        <!--<input type="text" id="medical" name="user[medical]">-->
         <textarea id="medical" name="user[medical]"></textarea>
+        <%- include('partials/hint') %>
 
         <label for="diet">Dietary Requirements</label>
-        <!--<input type="text" id="diet" name="user[diet]">-->
         <textarea id="diet" name="user[diet]"></textarea>
+        <%- include('partials/hint') %>
     </section>
     <section class="page">
         <label for="photo">Photo Consent</label>
         <input type="checkbox" id="photo" name="user[photo]">
-
-        <!--<button type="submit">Done!</button>-->
+        <%- include('partials/hint') %>
     </section>
 </form>
 

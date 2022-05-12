@@ -1,20 +1,24 @@
 form {
     --transition-time: .26s;
     position: relative;
+    min-width: 100vw;
 }
 
 form .page {
     position: absolute;
     top: 0;
-    
     display: grid;
-    grid-template-columns: 1fr repeat(2, 1.25fr) 2fr 1fr;
+    grid-template-columns: 
+        minmax(20px, .4fr) 
+        repeat(2, minmax(75px, .75fr)) 
+        minmax(100px, 1fr) 
+        minmax(20px, .4fr);
     grid-template-areas: '. left middle right .';
     grid-gap: .5rem;
+    min-width: 100vw;
 
-    width: 100vw;
-    min-width: 60vw;
     margin-inline: auto;
+    padding: .1em;
 }
 form .page.active {
     transform: translateX(0);
@@ -34,18 +38,55 @@ form label {
     font-size: .8em;
     padding-top: .3rem;
 }
+form label.user-hint {
+    font-size: .6em;
+    grid-column: left / right;
+    position: relative;
+    padding-left: 2em;
+    transform: scale(0);
+    margin-top: -.5em;
+}
+form label.user-hint.pass,
+form label.user-hint.fail {
+    transform: scale(1);
+}
+form label.user-hint svg {
+    position: absolute;
+    left: 0;
+    height: 1.2em;
+    transform: scale(0);
+}
+form label.user-hint svg.bi-check-circle {
+    color: green;
+}
+form label.user-hint svg.bi-exclamation-triangle {
+    color: red;
+}
+form label.user-hint.pass svg.bi-check-circle {
+    transform: scale(1);
+}
+form label.user-hint.fail svg.bi-exclamation-triangle {
+    transform: scale(1);
+}
+form span.user-hint__msg {
+    font-style: italic;
+}
+
 form input,
 form textarea {
     border: none;
     border-bottom: 2px solid rgba(var(--color-black),.3);
     border-radius: .2em .2em 0 0;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    padding: .3em .3em;
-    font-size: 1em;
-    letter-spacing: .1em;
-    font-family: var(--font-main);
     color: var(--color-black);
     caret-color: var(--color-primary-dark);
+    font-size: 1em;
+    font-family: var(--font-main);
+    letter-spacing: .1em;
+    padding: .3em .6em .15em;
+}
+form input {
+    height: 1.8em;
 }
 form textarea {
     height: 4em;
@@ -65,7 +106,8 @@ form label,
 form input,
 form textarea {
     grid-column: left / right;
-    width: 90%;
+    display: block;
+    /*width: 90%;*/
 }
 form .page label,
 form .page input,
@@ -81,7 +123,7 @@ form .page.active textarea {
 }
 
 form input.date:not(.yy) {
-    width: 90%;
+    /*width: 90%;*/
 }
 form input.date.dd {
     grid-column: left / span 1; 
@@ -91,5 +133,5 @@ form input.date.mm {
 }
 form input.date.yy {
     grid-column: right / span 1;
-    width: 70%;
+    /*width: 70%;*/
 }
