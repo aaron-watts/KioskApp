@@ -38,6 +38,8 @@ nextBtn.addEventListener('click', () => {
 backBtn.addEventListener('click', () => {
     const index = Array.from(pageList).findIndex(page => page.classList.contains('active'));
 
+    
+
     if (index > 0) {
         pageList[index].classList.remove('active');
         pageList[index - 1].classList.add('active');
