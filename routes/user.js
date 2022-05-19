@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const helper = require('../controllers/user.js');
+const helper = require('../controllers/user.controller.js');
 
 router.route('/')
     .get(helper.get)
