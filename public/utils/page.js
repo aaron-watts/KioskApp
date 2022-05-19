@@ -2,7 +2,7 @@ export const validate = formInstance => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             const pageInputs = Array.from(
-                document.querySelectorAll('.page.active input')
+                document.querySelectorAll('.page.active input, .page.active textarea')
             ).map(input => input.id);
 
             console.log(pageInputs)
@@ -27,4 +27,11 @@ export const next = pageList => {
     }
 
     return true;
-}
+};
+
+export const back = pageList => {
+    const index = Array.from(pageList).findIndex(page => page.classList.contains('active'));
+
+    
+};
+
