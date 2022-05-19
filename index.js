@@ -13,10 +13,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-const adminRoute = require('./routes/admin.js');
-const userRoute = require('./routes/user.js');
-const eventRoute = require('./routes/event.js');
-const sessionRoute = require('./routes/session.js');
+const adminRoute = require('./routes/admin.route.js');
+const userRoute = require('./routes/user.route.js');
+const eventRoute = require('./routes/event.route.js');
+const sessionRoute = require('./routes/session.route.js');
 
 app.use('/admin', adminRoute);
 app.use('/user', userRoute);
