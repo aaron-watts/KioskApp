@@ -17,7 +17,16 @@ export class Form {
             // validate
             if (this.validate()) console.log('SENDING FORM...');
         });
-}
+
+        this.target = null;
+    }
+
+    set targetInput(input) {
+        this.target = input;
+    }
+    get targetInput() {
+        return this.target;
+    }
 
     datatype(input) {
         return this.model[input.id].datatype;
