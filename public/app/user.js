@@ -1,5 +1,5 @@
 import { Form } from '/modules/Form.js';
-import { userModel } from '/models/user.model.js';
+import { userModel } from '/schemas/user.schema.js';
 import * as page from '/utils/page.js';
 
 const userForm = new Form(document.forms.user, userModel);
@@ -36,13 +36,24 @@ nextBtn.addEventListener('click', () => {
 });
 
 backBtn.addEventListener('click', () => {
-    const index = Array.from(pageList).findIndex(page => page.classList.contains('active'));
+    spinner.on();
 
+    new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const isFirstPage = page.back(pageList);
+            if (isFirstPage) reject();
+            resolve();
+        }, 1000);
+    })
+    .then(() => {
+        console.log('done');
+        spinner.off();
+    })
+    .catch(() => {
+        console.log('return to app');
+        // we will want to show a modal at this point to ask if user wants to exit form!!!
+        spinner.off();
+    })
     
-
-    if (index > 0) {
-        pageList[index].classList.remove('active');
-        pageList[index - 1].classList.add('active');
-    }
 });
 
