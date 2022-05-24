@@ -7,6 +7,11 @@
     right: 0;
 
     height: auto;
+
+    transform: translateX(100vw);
+}
+.keyboard.active {
+    transform: translateX(0);
 }
 
 .keyboard.num {
@@ -15,8 +20,6 @@
     grid-template-columns: 1fr repeat(3, 3rem) 1fr;
     grid-template-areas: '. left middle right .';
     grid-template-rows: repeat(4, 2rem);
-
-    display: none;
 }
 .keyboard.num button.char {
     display: none;
@@ -41,17 +44,30 @@
 }
 
 .keyboard.char {
+    --key-size: 1.6rem;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-block: .8em;
 }
 .keyboard.char .row {
-    margin-block: .1em;
+    margin-block: .2rem;
+}
+.keyboard.char button { 
+    height: var(--key-size); 
 }
 .keyboard.char button:is(.char, .num) {
-    height: 1.6em;
-    width: 2em;
-    margin-inline: .1em;
+    width: var(--key-size);
+    margin-inline: .01rem;
+}
+.keyboard.char .row:last-child { 
+    width: 50%; 
+}
+.keyboard.char button.space { 
+    width: 100%; 
+}
+.keyboard.char button.func:not(.keyboard.char button.func.space) {
+    width: calc(var(--key-size) * 2);
 }
 
