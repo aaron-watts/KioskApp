@@ -16,17 +16,18 @@ export const validate = formInstance => {
     });
 };
 
+export const isLastPage = (pageList, index) => pageList.length-1 === index;
+export const isFirstPage = index => index === 0;
+
 export const next = pageList => {
     const index = Array.from(pageList).findIndex(page => page.classList.contains('active'));
 
     if (index < pageList.length - 1) {
         pageList[index].classList.remove('active');
         pageList[index + 1].classList.add('active');
-
-        return false;
     }
 
-    return true;
+    return index;
 };
 
 export const back = pageList => {
@@ -35,10 +36,8 @@ export const back = pageList => {
     if (index > 0) {
         pageList[index].classList.remove('active');
         pageList[index - 1].classList.add('active');
-
-        return false;
     }
 
-    return true;
+    return index;
 };
 

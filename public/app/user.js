@@ -25,7 +25,7 @@ nextBtn.addEventListener('click', () => {
 
     page.validate(userForm)
     .then(() => {
-        const isLastPage = page.next(pageList);
+        const isLastPage = page.isLastPage(pageList, page.next(pageList));
         if (isLastPage) console.log('validate and submit form')
     })
     .catch(() => {
@@ -40,7 +40,7 @@ backBtn.addEventListener('click', () => {
 
     new Promise((resolve, reject) => {
         setTimeout(() => {
-            const isFirstPage = page.back(pageList);
+            const isFirstPage = page.isFirstPage(page.back(pageList));
             if (isFirstPage) reject();
             resolve();
         }, 1000);
