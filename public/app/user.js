@@ -8,6 +8,35 @@ const pageList = document.querySelectorAll('.page');
 const nextBtn = document.querySelector('#next');
 const backBtn = document.querySelector('#back');
 
+const showNum = () => {
+    console.log('showNum');
+};
+const disableNum = () => {
+    console.log('disable num');
+
+    showKeyboard();
+};
+const showKeyboard = () => {
+    console.log('show keyboard');
+};
+const showSelect = () => {
+    console.log('show select');
+};
+
+for (let input of userForm.form) {
+    input.addEventListener('focus', e => {
+        const dataType = userForm.datatype(input);
+
+        switch (dataType) {
+            case 'num' : return showNum();
+            case 'char' : return disableNum();
+            case 'string' : return showKeyboard();
+            case 'enum' : return showSelect();
+            default : return;
+        }
+    })
+}
+
 const spinner = {
     control: document.querySelector(
     `#${document.querySelector('.spinner').dataset.overlay}`

@@ -19,6 +19,10 @@ export class Form {
         });
 }
 
+    datatype(input) {
+        return this.model[input.id].datatype;
+    }
+
     validate(inputKeys=this.inputKeys) {
         for (let inputKey of inputKeys) {
             if (this.model[inputKey].validate) {
