@@ -1,9 +1,49 @@
-<div class="keyboard char">
-    <% for (let c of '1234567890') { %>
+<div class="keyboard num">
+    <% for (let c of '123456789') { %>
         <button class="num"><%= c %></button>
     <% } %>
-    
-    <% for (let c of 'qwertyuiopasdfghjklzxcvbnm') { %>
-        <button class="char"><%= c %></button>
-    <% } %>
+
+    <button class="delete">Del</button>
+    <button class="num">0</button>
+    <button class="return">OK</button>
+</div>
+
+<div class="keyboard char">
+    <div class="row">
+        <% for (let c of '1234567890') { %>
+            <button class="num"><%= c %></button>
+        <% } %>
+
+        <button class="delete">DEL</button>
+    </div>
+
+    <div class="row">
+        <% for (let c of 'qwertyuiop') { %>
+            <button class="char"><%= c %></button>
+        <% } %>
+    </div>
+
+    <div class="row">
+        <button class="caps">CAPS</button>
+
+        <% for (let c of 'asdfghjkl') { %>
+            <button class="char"><%= c %></button>
+        <% } %>
+
+        <button class="return">RTRN</button>
+    </div>
+
+    <div class="row">
+        <button class="shift">SHFT</button>
+
+        <% for (let c of 'zxcvbnm') { %>
+            <button class="char"><%= c %></button>
+        <% } %>
+
+        <button class="shift">SHFT</button>
+    </div>
+
+    <div class="row">
+        <button class="space">SPACE</button>
+    </div>
 </div>

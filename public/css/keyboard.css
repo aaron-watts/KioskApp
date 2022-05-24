@@ -6,21 +6,22 @@
     left: 0;
     right: 0;
 
-    display: grid;
-    grid-gap: .5rem;
-
     height: auto;
 }
 
 .keyboard.num {
+    display: grid;
+    grid-gap: .5rem;
     grid-template-columns: 1fr repeat(3, 3rem) 1fr;
     grid-template-areas: '. left middle right .';
     grid-template-rows: repeat(4, 2rem);
+
+    display: none;
 }
 .keyboard.num button.char {
     display: none;
 }
-.keyboard.num button.num {
+.keyboard.num button {
     height: 2rem;
 }
 .keyboard.num button.num:nth-child(3n-2) {
@@ -32,29 +33,25 @@
 .keyboard.num button.num:nth-child(3n) {
     grid-column: right / span 1;
 }
+.keyboard.num button.delete {
+    grid-column: left / span 1;
+}
+.keyboard.num button.return {
+    grid-column: right / span 1;
+}
 
 .keyboard.char {
-    grid-template-rows: repeat(4, 1.6rem);
-    grid-template-areas:
-        'first'
-        'second'
-        'third'
-        'fourth'
-        'fifth';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-block: .8em;
 }
-.keyboard.char button.num {
-    grid-row: first / span 1;
+.keyboard.char .row {
+    margin-block: .1em;
 }
-.keyboard.char button.char:nth-child(-n+20) {
-    background: red;
-}
-.keyboard.char button.char:nth-child(n+10):nth-child(-n+20) {
-    grid-row: second /span 1;
-}
-.keyboard.char button.char:nth-child(n+21):nth-child(-n+29) {
-    grid-row: third /span 1;
-}
-.keyboard.char button.char:nth-child(n+30):nth-child(-n+38) {
-    grid-row: fourth /span 1;
+.keyboard.char button:is(.char, .num) {
+    height: 1.6em;
+    width: 2em;
+    margin-inline: .1em;
 }
 
