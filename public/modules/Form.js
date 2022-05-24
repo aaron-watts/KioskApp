@@ -25,12 +25,12 @@ export class Form {
                 const input = this.form[inputKey];
 
                 for(let rule of this.model[inputKey].validate) {
-                    console.log(`Testing if [${input.id || input[0].id}] [${rule.name}]`);
+                    //console.log(`Testing if [${input.id || input[0].id}] [${rule.name}]`);
                     if (!rule(input)) {
-                        console.log('Test Failed');
+                        //console.log('Test Failed');
                         return false;
                     }
-                    console.log('Test successful');
+                    //console.log('Test successful');
                 }
             }
         }

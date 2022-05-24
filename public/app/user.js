@@ -1,5 +1,5 @@
-import { Form } from '/modules/form.js';
-import { userModel } from '/models/user.js';
+import { Form } from '/modules/Form.js';
+import { userModel } from '/models/user.model.js';
 import * as page from '/utils/page.js';
 
 const userForm = new Form(document.forms.user, userModel);
