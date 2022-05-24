@@ -8,10 +8,6 @@ const pageList = document.querySelectorAll('.page');
 const nextBtn = document.querySelector('#next');
 const backBtn = document.querySelector('#back');
 
-//console.log(userForm.targetInput);
-//userForm.targetInput = 'newTarget';
-//console.log(userForm.targetInput);
-
 const showNum = () => {
     console.log('showNum');
 };
