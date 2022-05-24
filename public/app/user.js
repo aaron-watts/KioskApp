@@ -8,6 +8,10 @@ const pageList = document.querySelectorAll('.page');
 const nextBtn = document.querySelector('#next');
 const backBtn = document.querySelector('#back');
 
+//console.log(userForm.targetInput);
+//userForm.targetInput = 'newTarget';
+//console.log(userForm.targetInput);
+
 const showNum = () => {
     console.log('showNum');
 };
@@ -25,14 +29,19 @@ const showSelect = () => {
 
 for (let input of userForm.form) {
     input.addEventListener('focus', e => {
-        const dataType = userForm.datatype(input);
+        if (input !== userForm.targetInput) {
+            userForm.targetInput = input;
 
-        switch (dataType) {
-            case 'num' : return showNum();
-            case 'char' : return disableNum();
-            case 'string' : return showKeyboard();
-            case 'enum' : return showSelect();
-            default : return;
+            const dataType = userForm.datatype(input);
+
+            switch (dataType) {
+                case 'num' : return showNum();
+                case 'char' : return disableNum();
+                case 'string' : return showKeyboard();
+                case 'enum' : return showSelect();
+                default : return;
+            }
+
         }
     })
 }
