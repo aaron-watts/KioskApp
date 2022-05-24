@@ -2,7 +2,7 @@ export const validate = formInstance => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             const pageInputs = Array.from(
-                document.querySelectorAll('.page.active input, .page.active textarea')
+                document.querySelectorAll('.page.active :is(input, textarea)')
             ).map(input => input.id);
 
             console.log(pageInputs)
